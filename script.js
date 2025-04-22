@@ -59,7 +59,7 @@ function createFood() {
     return randomNum;
   }
   foodX = randomFood(0, gameWidth - unitSize);
-  foodY = randomFood(0, gameWidth - unitSize);
+  foodY = randomFood(0, gameHeight - unitSize);
 }
 function drawFood() {
   ctx.fillStyle = foodColor;
@@ -76,6 +76,7 @@ function moveSnake() {
   if (snake[0].x == foodX && snake[0].y == foodY) {
     score += 1;
     scoreText.textContent = score;
+    createFood();
   } else {
     snake.pop();
   }
